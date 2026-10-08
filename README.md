@@ -90,4 +90,8 @@ The redesigned deck was checked locally in the Codex in-app browser. Safari also
 - Both JavaScript files passed syntax checks. All local script/style references exist and use relative paths for GitHub Pages project URLs.
 - Safari exported the revised seven-page A4 landscape handout. All seven pages contain notes, and the added slide was visually checked in the PDF.
 
-Still requires a short check on the actual teacher computer. Physical touchscreen hardware, real GPU loss, and a deployed GitHub Pages HTTPS URL were not available for verification. Native WebGPU cannot be guaranteed on every browser/GPU; the complete lesson and interactive CSS diagrams remain available in fallback mode.
+Still requires a short check on the actual teacher computer. Physical touchscreen hardware, real GPU loss, were not available for verification; the GitHub Pages site has been checked. Native WebGPU cannot be guaranteed on every browser/GPU; the complete lesson and interactive CSS diagrams remain available in fallback mode.
+
+## Visual refinement
+
+The demo heading now sits above the canvas. The partial contrast overlay has been removed, eliminating the horizontal seam in both WebGPU and CSS fallback. Slide headings use plain white text, with blue reserved mainly for graphics and measurements. All seven slides fit the tested 1366 × 768 viewport, and the demo controls and CPU workload slide were checked at 390 × 844. The previous PDF handout predates this visual refinement; print the current site for matching titles and layout. A fresh Safari export was interrupted while the desktop browser was in use.
