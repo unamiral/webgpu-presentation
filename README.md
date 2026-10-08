@@ -1,5 +1,7 @@
 # WebGPU: a spotlight, one pixel at a time
 
+[Open the presentation](https://unamiral.github.io/webgpu-presentation/) · [Public repository](https://github.com/unamiral/webgpu-presentation)
+
 A seven-slide, roughly five-minute presentation. No framework, build step, external font, CDN, login, or viewer installation. All graphics, text, and notes are included.
 
 ## Open and preview
@@ -27,7 +29,7 @@ No build command, package installation, API key, or server-side code is needed. 
 
 Official instructions: [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
-You can also upload these files together to any HTTPS static web host. Ordinary HTTP on a lab network may disable WebGPU. Browser viewers need no login or installation. The presentation is ready for a public GitHub repository and GitHub Pages. See the repository status supplied with the deliverable.
+You can also upload these files together to any HTTPS static web host. Ordinary HTTP on a lab network may disable WebGPU. Browser viewers need no login or installation. This repository is public and configured to publish the root of `main` through GitHub Pages. Push updates to `main` to redeploy.
 
 ## Lab-computer check
 
