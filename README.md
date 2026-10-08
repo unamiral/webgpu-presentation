@@ -86,6 +86,6 @@ The redesigned deck was checked locally in the Codex in-app browser. Safari also
 - Forced CSS fallback checked in the browser, including interactive diagram, colour/radius controls, navigation, exact fallback status, and revised fun fact.
 - Isolated Node lifecycle tests simulated missing WebGPU, null adapter, adapter rejection, device rejection, pipeline failure, validation failure, device loss, and uncaptured errors. All switched to fallback and retained demo controls. Mocked reduced-motion and hidden-page tests confirmed rendering scheduling stops and resumes as intended. These tests simulate failures; they do not induce hardware loss.
 - Both JavaScript files passed syntax checks. All local script/style references exist and use relative paths for GitHub Pages project URLs.
-- The six-slide version was previously checked as a Safari print export. The revised deck prints seven slides with notes.
+- Safari exported the revised seven-page A4 landscape handout. All seven pages contain notes, and the added slide was visually checked in the PDF.
 
 Still requires a short check on the actual teacher computer. Physical touchscreen hardware, real GPU loss, and a deployed GitHub Pages HTTPS URL were not available for verification. Native WebGPU cannot be guaranteed on every browser/GPU; the complete lesson and interactive CSS diagrams remain available in fallback mode.
