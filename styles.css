@@ -106,3 +106,28 @@
   .intro-slide h1{font-size:32pt!important}
   .workload-number{font-size:44pt}
 }
+
+/* Leave the stage to the lesson; only navigation remains visible. */
+.project-notes{display:grid;grid-template-columns:1fr 1.15fr;gap:6vw;border-top:1px solid var(--line);padding-top:22px;max-width:1120px}
+.project-notes p{margin:0;font-size:17px;line-height:1.5;color:var(--muted)}
+.project-notes strong{display:block;margin-bottom:9px;color:var(--ink);font-weight:500;font-size:20px}
+@media screen{
+  .slide{height:calc(100svh - 70px)}
+  footer{justify-content:flex-end}
+  footer #render-status{margin-right:auto}
+  .flow-slide .workflow{margin:5vh 0 4vh}
+}
+@media screen and (max-width:800px){
+  .slide{height:auto;min-height:calc(100svh - 80px)}
+  .slide:first-child{height:calc(100svh - 80px)}
+  .demo-slide{min-height:calc(100svh - 80px)}
+  .project-notes{grid-template-columns:1fr;gap:23px;padding-top:20px}
+  .project-notes p{font-size:15px}
+  .project-notes strong{font-size:18px}
+  footer #render-status{text-align:left;max-width:210px}
+}
+@media print{
+  .project-notes{gap:25px;padding-top:12px}
+  .project-notes p{font-size:10pt;color:#34465d}
+  .project-notes strong{font-size:12pt;color:#182236}
+}

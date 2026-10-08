@@ -22,6 +22,7 @@
     // Keep the demo canvas focusable for keyboard input even in CSS fallback.
     spots.forEach(s => {s.canvas.style.visibility = 'visible';s.canvas.style.opacity = '0';});
     document.querySelector('#render-status').textContent = 'WebGPU unavailable — showing a fallback.';
+    document.querySelector('#render-status').hidden = false;
     document.querySelector('#fun-fact').textContent = 'This presentation includes a WebGPU background and demo.';
     if (error) console.info('Using CSS spotlight fallback:', error.message || error);
     if (device) device.destroy();
@@ -153,7 +154,8 @@ struct Params {
       if (stopped) return;
       active = true;
       document.querySelector('#render-status').textContent = 'WebGPU active';
-      document.querySelector('#fun-fact').textContent = 'Fun fact: this presentation uses WebGPU too.';
+      document.querySelector('#render-status').hidden = true;
+      document.querySelector('#fun-fact').textContent = 'This spotlight is running on WebGPU.';
       schedule();
     } catch (error) {fallback(error);}
   }

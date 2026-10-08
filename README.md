@@ -35,7 +35,7 @@ You can also upload these files together to any HTTPS static web host. Ordinary 
 
 Do this on the actual teacher computer before presenting:
 
-- Open the HTTPS link in a current browser with WebGPU support for that operating system and GPU. Check the top-right status: **WebGPU active** confirms successful initialization. Browser name alone does not guarantee compatibility.
+- Open the HTTPS link in a current browser with WebGPU support for that operating system and GPU. On slide 6, the line **This spotlight is running on WebGPU.** confirms successful initialization. Browser name alone does not guarantee compatibility.
 - Move the pointer across slide 1. On slide 6, try the radius, all three colours, and Reset. A touch drag also moves the spotlight.
 - Test the projector resolution and fullscreen. Confirm you can read the slide text from the back of the room.
 - If the status says **WebGPU unavailable — showing a fallback.**, the presentation remains usable with its interactive CSS spotlight. The fun-fact line changes accordingly. Managed browser settings, GPU drivers, browser support, or device failure may prevent WebGPU.
@@ -46,13 +46,13 @@ MDN documents WebGPU's secure-context requirement and compatibility limitations:
 ## Present, practise, and print
 
 - Previous / Next or Left / Right arrows change slides. The first and last buttons stop at the deck boundaries. `#1` through `#7` link to individual slides.
-- Speaker notes toggles the notes under the current slide. Notes are visible on the same screen, so hide them before projecting. Each slide includes a suggested timing; total: five minutes.
-- Fullscreen enters or exits browser fullscreen when available. Escape also exits. If unavailable, use the browser's own fullscreen command.
+- Speaker notes are included in print output only. Each slide includes a suggested timing; total: five minutes.
+- Use the browser’s own fullscreen command when presenting.
 - The radius slider supports keyboard arrows, Home, and End without changing slides. Tab to either spotlight canvas and use arrow keys to move the light. Touch and pointer movement use the same coordinate mapping.
 - Slides 3 and 4 respond to pointer movement or arrow keys when their diagrams are focused. These are illustrative HTML/CSS diagrams, not hardware benchmarks.
 - On slide 5, drag the outlined pixel or focus it and use arrow keys. Home places it at the mouse (brightness 1.00); End puts it at the 180-pixel edge (0.00). The diagram scales to fit the screen; displayed distance uses its logical pixel coordinates.
 - The spotlight follows input immediately. Slide entry reveals are brief; reduced-motion settings remove them.
-- Print with Ctrl+P (Windows/Linux) or Cmd+P (macOS), then choose Save as PDF. Use A4 landscape, default scale, disable browser headers/footers, and enable background graphics. The print stylesheet shows **all seven slides and their notes**, regardless of the notes toggle. Inspect the preview for seven pages before saving. The spotlight prints as a static CSS image; the PDF is not interactive.
+- Print with Ctrl+P (Windows/Linux) or Cmd+P (macOS), then choose Save as PDF. Use A4 landscape, default scale, disable browser headers/footers, and enable background graphics. The print stylesheet shows **all seven slides and their notes**, regardless of the current slide. Inspect the preview for seven pages before saving. The spotlight prints as a static CSS image; the PDF is not interactive.
 
 ## Submit to Moodle
 
@@ -60,7 +60,7 @@ Submit `webgpu-presentation.zip` containing:
 
 - `index.html` — all seven slides and notes
 - `styles.css` — screen, responsive, and print layouts
-- `presentation.js` — navigation, notes, fullscreen, and mosaic
+- `presentation.js` — navigation and interactive teaching diagrams
 - `graphics.js` — WebGPU/WGSL, input handling, and fallback
 - `README.md` — these instructions and validation details
 - `.nojekyll` — GitHub Pages static-site marker
@@ -83,7 +83,7 @@ The redesigned deck was checked locally in the Codex in-app browser. Safari also
 
 - Live WebGPU spotlight and background rendered with no browser warning/error logs observed.
 - The original six-slide redesign was reviewed at 1366 × 768 and checked for page overflow at 1920 × 1080 (none). The added CPU-workload slide and updated seven-slide navigation were checked separately. Narrow layouts checked at 390 × 844; tall explanatory slides scroll normally on phones.
-- Navigation, counters, end buttons, notes toggle, fullscreen, keyboard controls, pointer movement, radius endpoints, all colours, and Reset checked.
+- Navigation, counters, end buttons, keyboard controls, pointer movement, radius endpoints, all colours, and Reset checked.
 - CPU mosaic and shader-flow position updates checked. Sample pixel checked at centre (1.00), 180-pixel edge (0.00), and beyond the edge (0.00).
 - Forced CSS fallback checked in the browser, including interactive diagram, colour/radius controls, navigation, exact fallback status, and revised fun fact.
 - Isolated Node lifecycle tests simulated missing WebGPU, null adapter, adapter rejection, device rejection, pipeline failure, validation failure, device loss, and uncaptured errors. All switched to fallback and retained demo controls. Mocked reduced-motion and hidden-page tests confirmed rendering scheduling stops and resumes as intended. These tests simulate failures; they do not induce hardware loss.
@@ -95,3 +95,7 @@ Still requires a short check on the actual teacher computer. Physical touchscree
 ## Visual refinement
 
 The demo heading now sits above the canvas. The partial contrast overlay has been removed, eliminating the horizontal seam in both WebGPU and CSS fallback. Slide headings use plain white text, with blue reserved mainly for graphics and measurements. All seven slides fit the tested 1366 × 768 viewport, and the demo controls and CPU workload slide were checked at 390 × 844. The previous PDF handout predates this visual refinement; print the current site for matching titles and layout. A fresh Safari export was interrupted while the desktop browser was in use.
+
+## Classroom questions
+
+Slide 4 now explicitly covers what WebGPU does, how it can help with classmates’ projects, and how to start using it in a webpage. The top bar and on-screen notes/fullscreen buttons have been removed. Only slide navigation remains during normal use; fallback mode shows a small notice. Desktop (1366 × 768), mobile (390 × 844), navigation, demo controls, and simulated GPU failures were checked after this change.

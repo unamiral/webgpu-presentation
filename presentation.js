@@ -23,19 +23,6 @@
     }
   });
   window.addEventListener('hashchange', () => show((parseInt(location.hash.slice(1), 10) || 1) - 1));
-  document.querySelector('#notes-toggle').addEventListener('click', event => {
-    const on = document.body.classList.toggle('show-notes');
-    event.currentTarget.setAttribute('aria-pressed', String(on));
-  });
-  const fullscreen = document.querySelector('#fullscreen');
-  fullscreen.addEventListener('click', async () => {
-    try {
-      if (document.fullscreenElement) await document.exitFullscreen();
-      else if (document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();
-      else throw new Error('Fullscreen is not supported here.');
-    } catch { document.querySelector('#ui-status').textContent = 'Fullscreen unavailable. Use your browser’s fullscreen command.'; }
-  });
-  document.addEventListener('fullscreenchange', () => { fullscreen.textContent = document.fullscreenElement ? 'Exit fullscreen' : 'Fullscreen'; });
   // Interactive teaching diagrams run in HTML/CSS, including on fallback machines.
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
   const brightness = (distance, radius = 180) => Math.max(0, 1 - distance / radius);
